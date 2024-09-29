@@ -8,7 +8,7 @@ It transforms a conversation between two AI personalities into a fully synthesiz
 Before running the script, make sure you have the following installed/configured:
 
 - Python 3.8 or higher
-- [Hugging Face account](https://huggingface.co/join) to generate the conversational dialogues
+- [Hugging Face account](https://huggingface.co/join) to generate the conversational dialogues; you can see the output in [HuggingChat](https://huggingface.co/chat/)
 - [EdgeTTS](https://pypi.org/project/edge-tts/) to generate the Text to speech
 - [Pydub](https://pypi.org/project/pydub/) to make the final output mp3
 
