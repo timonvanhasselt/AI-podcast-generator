@@ -1,0 +1,74 @@
+<speak>
+<voice name="Ava">
+    Welcome to our podcast, where we dive into the fascinating world of science and discovery. I'm your host, Ava, and joining me today is Andrew. Andrew, thanks for being on the show!
+    <break time="0.5s"/>
+</voice>
+<voice name="Andrew">
+    Thanks for having me, Ava. I'm excited to be here.
+    <break time="0.3s"/>
+</voice>
+<voice name="Ava">
+    So, have you heard about the new exhibit at Naturalis in Leiden? They're showcasing a herd of Triceratops skeletons, and I'm super stoked about it.
+    <break time="0.5s"/>
+</voice>
+<voice name="Andrew">
+    Yeah, I've heard about it. It's a big deal, right? I mean, Triceratops are already an iconic dinosaur, and now we get to see a whole herd of them together.
+    <break time="0.3s"/>
+</voice>
+<voice name="Ava">
+    Exactly! And what's even more amazing is that these skeletons were found in Wyoming back in 2013. Can you believe it? Five individuals, all from the same site.
+    <break time="0.5s"/>
+</voice>
+<voice name="Andrew">
+    That's incredible. I've always been fascinated by the idea of finding a dinosaur fossil, let alone a whole herd of them. The team at Naturalis must have been thrilled.
+    <break time="0.3s"/>
+</voice>
+<voice name="Ava">
+    I know, right? It's a once-in-a-lifetime discovery. And now, we get to experience it for ourselves. I've heard the exhibit is going to be interactive, with games and stuff. Have you heard anything about that?
+    <break time="0.5s"/>
+</voice>
+<voice name="Andrew">
+    Yeah, I've heard it's going to be really hands-on. You'll be able to collect food like a Triceratops, learn about their digestive system, and even hear what their, ahem, "unique" flatulence sounded like.
+    <break time="0.3s"/>
+</voice>
+<voice name="Ava">
+    That sounds hilarious. And I've also heard you can crawl inside a Triceratops egg and see how the babies grew. That's just mind-blowing.
+    <break time="0.5s"/>
+</voice>
+<voice name="Andrew">
+    Totally. It's amazing to think about these creatures roaming the earth millions of years ago. And now, we get to see them up close and personal.
+    <break time="0.3s"/>
+</voice>
+<voice name="Ava">
+    Exactly. And I love that Naturalis is making it accessible to everyone. It's not just about the science; it's about sharing the wonder and excitement of discovery.
+    <break time="0.5s"/>
+</voice>
+<voice name="Andrew">
+    Absolutely. I think that's what I love most about this exhibit. It's not just for dinosaur enthusiasts; it's for anyone who's ever been curious about the natural world.
+    <break time="0.3s"/>
+</voice>
+<voice name="Ava">
+    Well, I'm definitely curious. I'm planning on checking it out as soon as it opens. How about you?
+    <break time="0.5s"/>
+</voice>
+<voice name="Andrew">
+    Same here. I'll be there with my kids, who are already super excited about it. It's going to be a fun day out for all of us.
+    <break time="0.3s"/>
+</voice>
+<voice name="Ava">
+    That sounds great. I'm sure they'll love it. And who knows, maybe it'll inspire the next generation of paleontologists.
+    <break time="0.5s"/>
+</voice>
+<voice name="Andrew">
+    You never know. Stranger things have happened.
+    <break time="0.3s"/>
+</voice>
+<voice name="Ava">
+    Well, thanks for chatting with me about this, Andrew. It's always great to share our enthusiasm for science and discovery.
+    <break time="0.5s"/>
+</voice>
+<voice name="Andrew">
+    Thanks, Ava. It's been a blast.
+    <break time="0.3s"/>
+</voice>
+</speak>
