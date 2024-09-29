@@ -71,13 +71,14 @@ Once everything is set up, you can run the script as follows:
 
 ### Output
 The script will generate an SSML conversation between the speakers, convert it into speech, and combine the segments into a final MP3 file named final_output.mp3.
-Customization
 
-#### Change Speakers and Language
+### Customization
+
+**Change Speakers and Language**
 You can customize the speakers and their voices by modifying the following variables in the script:
 
-```spe
-aker1 = "Ava"  # Change to your preferred speaker name
+```
+speaker1 = "Ava"  # Change to your preferred speaker name
 speaker2 = "Andrew"  # Change to your preferred speaker name
 lang = "English"  # Change to your preferred language
 ```
