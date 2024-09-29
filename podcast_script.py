@@ -9,7 +9,7 @@ import asyncio
 
 # Log in to huggingface and grant authorization to huggingchat
 EMAIL = "your-email@domain.com" # replace with your Huggingface account
-PASSWD = "your-password" replace with your Huggingface password
+PASSWD = "your-password" #replace with your Huggingface password
 cookie_path_dir = "./cookies/"  # NOTE: trailing slash (/) is required to avoid errors
 sign = Login(EMAIL, PASSWD)
 cookies = sign.login(cookie_dir_path=cookie_path_dir, save_cookies=True)
