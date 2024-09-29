@@ -4,8 +4,8 @@ This script generates an AI-powered podcast based on a give text.
 It transforms a conversation between two AI personalities into a fully synthesized audio file. You can customize the speakers, language, and voices for your podcast.
 Inspired by the audio overview option of Google's [NotebookLM](https://notebooklm.google.com) experiment, and inspired by [AnthusAI/Podcastic](https://github.com/AnthusAI/Podcastic) to make a script of it.
 
-![script](https://github.com/user-attachments/assets/04cb36b5-4090-4ac4-98a2-cb89512f5276)
 
+![script](https://github.com/user-attachments/assets/c191aa63-968d-48ca-ad45-4b225bea258a)
 
   
 ## Requirements
