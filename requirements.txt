@@ -1,0 +1,3 @@
+hugchat
+edge-tts
+pydub
