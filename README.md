@@ -1,6 +1,6 @@
 # AI Podcast Generator
 
-This script generates an AI-powered podcast based on a give text.
+This script generates an AI-powered podcast based on a given text.
 It transforms a conversation between two AI personalities into a fully synthesized audio file. You can customize the speakers, language, and voices for your podcast.
 Inspired by the audio overview option of Google's [NotebookLM](https://notebooklm.google.com) experiment, and inspired by [AnthusAI/Podcastic](https://github.com/AnthusAI/Podcastic) to make a script of it.
 
