@@ -96,6 +96,16 @@ voice_map = {
 }
 ```
 
+### WebUI
+Run `app.py` first to open the Flask server for the webUI.
+The webUI can be visited by browsing to: [http://127.0.0.1:5000](http://127.0.0.1:5000)
+
+The start button triggers the `podcast_script.py` script via the webUI.
+The logs of the script are showed also, to give the user more info about what's happening. Generation of SSML and the Mp3 file takes about 3 minutes (depending on the text length).
+
+
+
+
 
 ### Notes
 Make sure you are logged into Hugging Face and have the proper credentials for API access.
