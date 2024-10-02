@@ -4,7 +4,7 @@ This script generates an AI-powered podcast based on a given text.
 It transforms a conversation between two AI personalities into a fully synthesized audio file. You can customize the speakers, language, and voices for your podcast.
 Inspired by the audio overview option of Google's [NotebookLM](https://notebooklm.google.com) experiment, and inspired by [AnthusAI/Podcastic](https://github.com/AnthusAI/Podcastic) to make a script of it.
 
-![script](https://github.com/user-attachments/assets/46139154-0a4a-4491-89a4-5ea3984985a3)
+![Animated gif of the script in action](https://github.com/user-attachments/assets/46139154-0a4a-4491-89a4-5ea3984985a3)
 
 
   
@@ -101,10 +101,13 @@ Run `app.py` first to open the Flask server for the webUI.
 The webUI can be visited by browsing to: [http://127.0.0.1:5000](http://127.0.0.1:5000)
 
 The start button triggers the `podcast_script.py` script via the webUI.
-The logs of the script are showed also, to give the user more info about what's happening. Generation of SSML and the Mp3 file takes about 3 minutes (depending on the text length).
+The logs of the script are showed also, to give the user more info about what's happening. 
+(Note: Generation of SSML and the Mp3 file takes about 2-3 minutes alltogether, depending on the text length).
+
+The output mp3 will be loaded in the site after processing.
 
 
-
+![Animated gif of the web UI in action](https://github.com/user-attachments/assets/1cc1213b-bb50-4967-9f94-634e935a6d29)
 
 
 ### Notes
