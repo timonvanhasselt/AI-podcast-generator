@@ -1,3 +1,4 @@
 hugchat
 edge-tts
 pydub
+flask
