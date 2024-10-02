@@ -15,6 +15,8 @@ Before running the script, make sure you have the following installed/configured
 - [Hugging Face account](https://huggingface.co/join) to generate the conversational dialogues; you can see the output in [HuggingChat](https://huggingface.co/chat/)
 - [EdgeTTS](https://pypi.org/project/edge-tts/) to generate the Text to speech
 - [Pydub](https://pypi.org/project/pydub/) to make the final output mp3
+- [Flask](https://pypi.org/project/flask/) to run a webUI around the scriopt for easy creation of the podcast
+
 
 ## Installation
 
