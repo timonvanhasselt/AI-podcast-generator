@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-podcast</title>
+    <style>
+        /* Algemene reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ecf0f1; /* Lichtere achtergrondkleur */
+            color: #2c3e50; /* Donkerdere tekstkleur */
+            padding: 20px;
+            max-width: 75%; /* Breedte van de pagina */
+            margin: 0 auto; /* Centreert de pagina */
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #0A1758; /* Blauw voor de kop */
+            font-size: 2em; /* Grotere tekst voor de kop */
+        }
+
+        /* Invoerveld voor de content */
+
+        textarea {
+            width: 100%;
+            height: 200px;
+            padding: 10px;
+            border: 2px solid #0A1758; /* Buitenste rand is geel */
+            border-radius: 10px; /* Afgeronde hoeken */
+            font-size: 18px; /* Grotere tekstgrootte */
+            resize: none; /* Voorkomt dat het invoerveld kan worden aangepast */
+            outline: none; /* Verwijder de standaard focusrand */
+            transition: border-color 0.3s; /* Voor een vloeiende overgang */
+        }
+        
+        /* Focus-stijl met dubbele randkleur */
+        textarea:focus {
+            border: 2px double #0A1758; /* Buitenste rand is donkerblauw */
+            box-shadow: 0 0 5px #F1E800; /* Gele gloed om de focus heen */
+        }
+
+
+        /* Knopstijl */
+        button {
+            background-color: #0A1758; /* Hoofdkleur */
+            color: white;
+            width: 120px;
+            height: 60px;
+            border: none;
+            border-radius: 10px; /* Afgeronde hoeken */
+            padding: 10px 20px;
+            font-size: 24px; /* Grotere tekstgrootte */
+            cursor: pointer;
+            transition: background-color 0.3s; /* Voor een vloeiende overgang */
+            display: block; /* Zorg ervoor dat de knop op een nieuwe regel staat */
+            margin: 20px auto; /* Centreert de knop */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Schaduw voor diepte */
+        }
+
+        button:hover, button:focus {
+            background-color: #F1E800; /* Geel bij hover */
+            color: #0A1758;
+        }
+
+        /* Logsectie */
+        #logs {
+            border: 2px solid #0A1758; /* Dikkere blauwe rand */
+            height: 250px;
+            overflow-y: scroll;
+            padding: 10px;
+            background-color: white;
+            border-radius: 10px; /* Afgeronde hoeken */
+            font-family: monospace; /* Voor een betere leesbaarheid van logs */
+            margin-bottom: 20px;
+            color: #34495e; /* Donkerdere tekstkleur voor logs */
+            font-size: 18px; /* Grotere tekstgrootte voor logs */
+        }
+
+        /* Audio speler */
+        audio {
+            display: block; /* Zorg ervoor dat de audio speler op een nieuwe regel staat */
+            margin-top: 20px;
+            width: 100%; /* Volledige breedte */
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+        function runPythonScript() {
+            // Wis de bestaande logs en verberg het audio-element zodra de knop wordt ingedrukt
+            document.getElementById('logs').innerText = '';
+            document.getElementById('audioPlayer').style.display = 'none';  // Verberg de audio speler
+            document.getElementById('audioPlayer').src = '';  // Reset de audio source
+
+            // Haal de tekst op uit het invoerveld
+            const content = document.getElementById('contentInput').value;
+
+            // Stuur de tekst naar de server via een POST verzoek
+            fetch('/save-content', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ content: content })
+            })
+            .then(response => {
+                // Na het opslaan, start het ontvangen van de log-uitvoer van de server
+                const eventSource = new EventSource('/stream');
+                eventSource.onmessage = function(event) {
+                    // Voeg de log-output toe aan de log-sectie
+                    document.getElementById('logs').innerText += event.data + "\n";
+
+                    // Scroll automatisch naar de onderkant van de log-output
+                    document.getElementById('logs').scrollTop = document.getElementById('logs').scrollHeight;
+
+                    // Controleer of het script klaar is
+                    if (event.data.includes("--- SCRIPT KLAAR ---")) {
+                        // Toon de audio speler en stel de MP3-source in
+                        document.getElementById('audioPlayer').style.display = 'block';
+                        document.getElementById('audioPlayer').src = '/final_output';
+                    }
+                };
+
+                eventSource.onerror = function() {
+                    eventSource.close();
+                };
+            })
+            .catch(error => {
+                document.getElementById('logs').innerText = "Fout bij het opslaan van de content: " + error;
+            });
+        }
+    </script>
+</head>
+<body>
+
+    <img src="{{ url_for('static', filename='logo.jpg') }}" alt="VisioLab logo" style="display: block; margin: 0 auto 20px; max-width: 15%; height: auto;">
+
+    <h1>AI-podcast</h1>
+    
+    <h2>Voer tekst in:</h2>
+    <!-- Invoerveld voor de content -->
+    <textarea id="contentInput" rows="20" placeholder="Voer hier tekst in voor de podcast..."></textarea>
+    <button onclick="runPythonScript()">Start</button>
+
+    <h2>Logs:</h2>
+    <pre id="logs"></pre>
+
+    <!-- Audio speler, verborgen totdat het script voltooid is -->
+    <audio id="audioPlayer" controls style="display:none;">
+        <source src="" type="audio/mpeg">
+        Uw browser ondersteunt het audio-element niet.
+    </audio>
+</body>
+</html>
